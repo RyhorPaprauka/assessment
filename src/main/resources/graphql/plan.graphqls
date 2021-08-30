@@ -1,0 +1,41 @@
+type Link {
+    from: ID,
+    to:ID
+}
+
+type Program{
+    id: ID,
+    link: String,
+    title: String,
+    index: Int,
+    completed: Boolean,
+    shouldDecrease: Boolean,
+    decreaseTimes: Int,
+}
+
+type Data {
+    priority: String,
+    text: String,
+    completed: Boolean,
+    shouldDecrease: Boolean,
+    programs: [Program]
+}
+
+type Node {
+    id: ID,
+    title: String,
+    coordinates: [Int],
+    outputs: String,
+    disableDrag: Boolean,
+    data: Data
+}
+
+type Plan {
+    title: String,
+    nodes:[Node],
+    links:[Link]
+}
+
+type Query {
+    plan(title: String):Plan
+}

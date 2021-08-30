@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    url: ${PGURL}
+    username: ${PGUSER}
+    password: ${PGPASSWORD}
+    driver-class-name: org.postgresql.Driver
+  liquibase:
+    change-log: db/liquibase-changelog.xml
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non-contextual-creation: true
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+#  security:
+#    oauth2:
+#      client:
+#        registration:
+#          google:
+#            client-id: 765069738624-f8aitar84rqfj8tmfc96mq9obbnlud4s.apps.googleusercontent.com
+#            client-secret: Q7nTjUfpssSfguXexJR3rqOi
+#            redirectUri: "{baseUrl}/oauth2/callback/{registrationId}"
+#            scope:
+#              - email
