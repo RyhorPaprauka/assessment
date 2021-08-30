@@ -11,3 +11,16 @@ before_install:
 script:
   - ./gradlew test
   - ./gradlew build
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-1"
+  app: "AssessmentServer"
+  env: "Assessmentserver-env"
+  bucket-name: "elasticbeanstalk-us-east-1-639392862171"
+  bucket-path: "AssessmentServer"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: $AWS_SECRET_KEY
