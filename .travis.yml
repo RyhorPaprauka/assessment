@@ -21,6 +21,5 @@ deploy:
   bucket-path: "AssessmentServer"
   on:
     branch: master
-  access_key_id: AKIAZJXWIZ7NU2V2KD7O
-  secret_access_key:
-    secure: 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
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
