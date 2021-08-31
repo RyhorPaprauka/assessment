@@ -13,13 +13,8 @@ script:
   - ./gradlew build
 
 deploy:
-  provider: elasticbeanstalk
-  region: "us-east-1"
-  app: "AssessmentServer"
-  env: "Assessmentserver-env"
-  bucket-name: "elasticbeanstalk-us-east-1-639392862171"
-  bucket-path: "AssessmentServer"
+  provider: heroku
+  app: assessment-platform
+  api_key: $HEROKU_API_KEY
   on:
     branch: master
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: $AWS_SECRET_KEY
