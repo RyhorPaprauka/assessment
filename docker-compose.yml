@@ -1,8 +1,0 @@
-version: '3'
-services:
-  assessment:
-    environment:
-      - PGURL=jdbc:postgresql://postgres/assessment
-      - PGUSER=admin
-      - PGPASSWORD=fmIZ3REf
-    build: .
