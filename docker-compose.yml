@@ -15,9 +15,9 @@ services:
       - '80:80'
   assessment:
     environment:
-      - PGURL=jdbc:postgresql://postgres/assessment
-      - PGUSER=admin
-      - PGPASSWORD=fmIZ3REf
+      - JDBC_DATABASE_URL=jdbc:postgresql://postgres/assessment
+      - JDBC_DATABASE_USERNAME=admin
+      - JDBC_DATABASE_PASSWORD=fmIZ3REf
     build: .
     depends_on:
       - postgres

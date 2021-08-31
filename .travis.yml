@@ -1,12 +1,6 @@
-
 language: java
 jdk:
   - openjdk16
-services:
-  - docker
-
-before_install:
-  - docker pull adoptopenjdk/openjdk16:alpine-jre
 
 script:
   - ./gradlew test
