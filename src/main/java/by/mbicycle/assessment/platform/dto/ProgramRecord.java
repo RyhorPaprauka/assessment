@@ -5,7 +5,7 @@ import java.util.UUID;
 public record ProgramRecord(
         UUID id,
         String link,
-        String title,
+        String content,
         Integer index,
         Boolean isCompleted,
         Boolean shouldDecrease,

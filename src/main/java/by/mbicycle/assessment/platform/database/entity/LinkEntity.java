@@ -35,11 +35,11 @@ public class LinkEntity implements BaseEntity<UUID> {
 
     @Column(name = "from_node", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    private UUID from;
+    private UUID input;
 
     @Column(name = "to_node", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    private UUID to;
+    private UUID output;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "plan_id", nullable = false)

@@ -39,7 +39,7 @@ public class NodeEntity implements BaseEntity<UUID> {
     private UUID id;
 
     @Column(name = "title", nullable = false, unique = true)
-    private String title;
+    private String content;
 
     @Column(name = "text")
     private String text;

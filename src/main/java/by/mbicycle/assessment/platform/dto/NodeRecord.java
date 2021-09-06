@@ -5,9 +5,9 @@ import java.util.UUID;
 
 public record NodeRecord(
         UUID id,
-        String title,
+        String content,
         List<Integer> coordinates,
-        String outputs,
+        List<OutputRecord> outputs,
         Boolean isDisableDrag,
         NodeDataRecord data) {
 }

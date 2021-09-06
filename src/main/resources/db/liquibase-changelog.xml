@@ -8,5 +8,6 @@
 
     <include file="changelog/init.sql" relativeToChangelogFile="true"/>
     <include file="changelog/0001_test_values.sql" relativeToChangelogFile="true"/>
+    <include file="changelog/0002_update_outputs.sql" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>

@@ -4,6 +4,9 @@ import by.mbicycle.assessment.platform.database.entity.NodeEntity;
 import by.mbicycle.assessment.platform.database.entity.enam.NodePriority;
 import by.mbicycle.assessment.platform.dto.NodeDataRecord;
 import by.mbicycle.assessment.platform.dto.NodeRecord;
+import by.mbicycle.assessment.platform.dto.OutputRecord;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
@@ -24,5 +27,9 @@ public interface NodeMapper {
 
     default String toPriorityString(NodePriority priority) {
         return priority.getValue();
+    }
+
+    default List<OutputRecord> parseOutput(String outputs) throws JsonProcessingException {
+        return List.of(new ObjectMapper().readValue(outputs, OutputRecord[].class));
     }
 }

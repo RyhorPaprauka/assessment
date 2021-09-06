@@ -32,7 +32,7 @@ public class ProgramEntity implements BaseEntity<UUID> {
     private UUID id;
 
     @Column(name = "title", nullable = false, unique = true)
-    private String title;
+    private String content;
 
     @Column(name = "link")
     private String link;

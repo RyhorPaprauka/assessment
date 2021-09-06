@@ -1,12 +1,12 @@
 type Link {
-    from: ID,
-    to:ID
+    input: ID,
+    output:ID
 }
 
 type Program{
     id: ID,
     link: String,
-    title: String,
+    content: String,
     index: Int,
     completed: Boolean,
     shouldDecrease: Boolean,
@@ -21,11 +21,16 @@ type Data {
     programs: [Program]
 }
 
+type Output{
+    id: String,
+    alignment: String
+}
+
 type Node {
     id: ID,
-    title: String,
+    content: String,
     coordinates: [Int],
-    outputs: String,
+    outputs: [Output],
     disableDrag: Boolean,
     data: Data
 }
