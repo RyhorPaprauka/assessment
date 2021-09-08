@@ -28,6 +28,7 @@ type Output{
 
 type Node {
     id: ID,
+    index: Int,
     content: String,
     coordinates: [Int],
     outputs: [Output],

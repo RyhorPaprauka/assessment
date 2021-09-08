@@ -38,6 +38,9 @@ public class NodeEntity implements BaseEntity<UUID> {
             strategy = "org.hibernate.id.UUIDGenerator")
     private UUID id;
 
+    @Column(name = "index", nullable = false)
+    private Integer index;
+
     @Column(name = "title", nullable = false, unique = true)
     private String content;
 

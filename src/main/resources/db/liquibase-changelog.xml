@@ -10,5 +10,6 @@
     <include file="changelog/0001_test_values.sql" relativeToChangelogFile="true"/>
     <include file="changelog/0002_update_outputs.sql" relativeToChangelogFile="true"/>
     <include file="changelog/0003_change_outputs.sql" relativeToChangelogFile="true"/>
+    <include file="changelog/0004_add_index_to_node.sql" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>
