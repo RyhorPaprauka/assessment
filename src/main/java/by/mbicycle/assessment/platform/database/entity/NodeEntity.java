@@ -1,10 +1,7 @@
 package by.mbicycle.assessment.platform.database.entity;
 
 import by.mbicycle.assessment.platform.database.entity.enam.NodePriority;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.Column;
@@ -25,6 +22,7 @@ import java.util.UUID;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Setter
 @Getter
 @Entity
 @Table(name = "node")

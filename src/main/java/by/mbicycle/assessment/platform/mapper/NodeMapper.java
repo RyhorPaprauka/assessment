@@ -19,6 +19,12 @@ public interface NodeMapper {
     @Mapping(target = "data", expression = "java(toDataRecord(nodeEntity))")
     NodeRecord toRecord(NodeEntity nodeEntity);
 
+    @Mapping(target = "coordinateX", expression = "java(nodeRecord.coordinates().get(0))")
+    @Mapping(target = "coordinateY", expression = "java(nodeRecord.coordinates().get(1))")
+    @Mapping(target = "text", expression = "java(nodeRecord.data().text())")
+    @Mapping(target = "priority", expression = "java(toNodePriority(nodeRecord))")
+    NodeEntity toEntity(NodeRecord nodeRecord);
+
     NodeDataRecord toDataRecord(NodeEntity entity);
 
     default List<Integer> toCoordinates(NodeEntity entity) {
@@ -31,5 +37,13 @@ public interface NodeMapper {
 
     default List<OutputRecord> parseOutput(String outputs) throws JsonProcessingException {
         return List.of(new ObjectMapper().readValue(outputs, OutputRecord[].class));
+    }
+
+    default String writeOutput(List<OutputRecord> outputs) throws JsonProcessingException {
+        return new ObjectMapper().writeValueAsString(outputs);
+    }
+
+    default NodePriority toNodePriority(NodeRecord nodeRecord) {
+        return NodePriority.valueOf(nodeRecord.data().priority());
     }
 }
